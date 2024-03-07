@@ -39,12 +39,6 @@ function validateInput(testInput) {
   return result;
 }
 
-// const pilotStatusList = document.getElementById('pilotStatus');
-// const copilotList = document.getElementById('copilotStatus');
-// const fuelLevelList = document.getElementById('fuelStatus');
-// const cargoMassList = document.getElementById('cargoStatus');
-
-// const faultyItemsContainer = document.getElementById('faultyItems')
 
 function formSubmission(
   document,
@@ -54,22 +48,26 @@ function formSubmission(
   fuelLevel,
   cargoMass
 ) {
-  if (validateInput(pilot) !== 'Not a Number') {
-    window.alert('Please enter a valid input for Pilot Name');
-  }
+let response;
 
-  if (validateInput(copilot) !== 'Not a Number') {
-    window.alert('Please enter a valid input for Co-pilot Name');
-  }
+// if (validateInput(pilot.value) !== 'Not a Number') {
+//     response = window.alert('Please enter a valid input for Pilot Name');
+//   } 
 
-  if(validateInput(fuelLevel) !== 'Is a Number') {
+//   if (validateInput(copilot) !== 'Not a Number') {
+//     window.alert('Please enter a valid input for Co-pilot Name');
+//   } 
+
+  if(validateInput(fuelLevel.value) !== 'Is a Number' ) {
     window.alert('Please enter a valid input for Fuel Level')
+  } else {
+    window.alert('Yes my boy!')
   }
 
-  if(validateInput(cargoMass) !== 'Is a Number') {
-    window.alert('Please enter a valid input for Cargo Mass')
-  }
-
+  // if(validateInput(cargoMass) !== 'Is a Number') {
+  //   window.alert('Please enter a valid input for Cargo Mass')
+  // } 
+  return response;
 }
 
 async function myFetch() {
