@@ -1,10 +1,18 @@
 // Write your helper functions here!
 
-require('cross-fetch/polyfill');
+require("cross-fetch/polyfill");
 
-function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-    // Here is the HTML formatting for our mission target div.
-    /*
+function addDestinationInfo(
+  document,
+  name,
+  diameter,
+  star,
+  distance,
+  moons,
+  imageUrl
+) {
+  // Here is the HTML formatting for our mission target div.
+  /*
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: </li>
@@ -15,49 +23,67 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
                  </ol>
                  <img src="">
     */
- }
- 
- function validateInput(testInput) {
+}
 
-    let result;
+function validateInput(testInput) {
+  let result;
 
-    if (testInput === "") {
-        result = 'Empty' 
-    } else if (isNaN(testInput) == true) {
-        result = 'Not a Number'
-    } else if (isNaN(testInput) == false) {
-        result = 'Is a Number'
-    }
+  if (testInput === "") {
+    result = "Empty";
+  } else if (isNaN(testInput) == true) {
+    result = "Not a Number";
+  } else if (isNaN(testInput) == false) {
+    result = "Is a Number";
+  }
 
+  return result;
+}
 
-    return result
-     
- }
+// const pilotStatusList = document.getElementById('pilotStatus');
+// const copilotList = document.getElementById('copilotStatus');
+// const fuelLevelList = document.getElementById('fuelStatus');
+// const cargoMassList = document.getElementById('cargoStatus');
 
+// const faultyItemsContainer = document.getElementById('faultyItems')
 
-// const pilotFaultyItems = document.getElementById('pilotStatus');
-// const copilotFaultyItems = document.getElementById('copilotStatus');
-// const fuelLevelFaultyItems = document.getElementById('fuelStatus');
-// const cargoMassFaultyItems = document.getElementById('cargoStatus');
- 
- function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
+function formSubmission(
+  document,
+  list,
+  pilot,
+  copilot,
+  fuelLevel,
+  cargoMass
+) {
+  if (validateInput(pilot) !== 'Not a Number') {
+    window.alert('Please enter a valid input for Pilot Name');
+  }
 
- }
- 
- async function myFetch() {
-     let planetsReturned;
- 
-     planetsReturned = await fetch().then( function(response) {
-         });
- 
-     return planetsReturned;
- }
- 
- function pickPlanet(planets) {
- }
- 
- module.exports.addDestinationInfo = addDestinationInfo;
- module.exports.validateInput = validateInput;
- module.exports.formSubmission = formSubmission;
- module.exports.pickPlanet = pickPlanet; 
- module.exports.myFetch = myFetch;
+  if (validateInput(copilot) !== 'Not a Number') {
+    window.alert('Please enter a valid input for Co-pilot Name');
+  }
+
+  if(validateInput(fuelLevel) !== 'Is a Number') {
+    window.alert('Please enter a valid input for Fuel Level')
+  }
+
+  if(validateInput(cargoMass) !== 'Is a Number') {
+    window.alert('Please enter a valid input for Cargo Mass')
+  }
+
+}
+
+async function myFetch() {
+  let planetsReturned;
+
+  planetsReturned = await fetch().then(function (response) {});
+
+  return planetsReturned;
+}
+
+function pickPlanet(planets) {}
+
+module.exports.addDestinationInfo = addDestinationInfo;
+module.exports.validateInput = validateInput;
+module.exports.formSubmission = formSubmission;
+module.exports.pickPlanet = pickPlanet;
+module.exports.myFetch = myFetch;
