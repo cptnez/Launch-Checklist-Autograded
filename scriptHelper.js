@@ -38,7 +38,9 @@ function validateInput(testInput) {
 
   return result;
 }
-
+// const textPilotStatus = document.getElementById("pilotStatus");
+// const textCopilotStatus = document.getElementById('copilotStatus');
+const containerFaultyItems = document.getElementById("faultyItems");
 
 function formSubmission(
   document,
@@ -50,24 +52,33 @@ function formSubmission(
 ) {
 let response;
 
-// if (validateInput(pilot.value) !== 'Not a Number') {
-//     response = window.alert('Please enter a valid input for Pilot Name');
-//   } 
+// if (validateInput(pilot.value) !== 'Not a Number') 
+// {
+//     window.alert('Please enter a valid input for Pilot Name');
+//   } else 
+//   {
+//     containerPilotStatus.innerHTML = 'asdasda'
+//   }
 
-//   if (validateInput(copilot) !== 'Not a Number') {
-//     window.alert('Please enter a valid input for Co-pilot Name');
-//   } 
+  // if (validateInput(copilot.value) !== 'Not a Number') {
+  //   window.alert('Please enter a valid input for Co-pilot Name');
+  // } else {
+  //   window.alert('Yes my boy!')
+  //  }
 
   if(validateInput(fuelLevel.value) !== 'Is a Number' ) {
     window.alert('Please enter a valid input for Fuel Level')
-  } else {
-    window.alert('Yes my boy!')
-  }
+  } else if (fuelLevel.value < 10000) {
+    console.log('visability test')
+    containerFaultyItems.innerHTML.style.visibility = "visible"
+  } 
 
-  // if(validateInput(cargoMass) !== 'Is a Number') {
+  // if(validateInput(cargoMass.value) !== 'Is a Number') {
   //   window.alert('Please enter a valid input for Cargo Mass')
-  // } 
-  return response;
+  // } else {
+  //   window.alert('Yes my boy!')
+  //  }
+  // return response;
 }
 
 async function myFetch() {
