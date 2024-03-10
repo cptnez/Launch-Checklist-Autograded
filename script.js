@@ -19,15 +19,18 @@ window.addEventListener("load", function() {
     const fuelLevel = document.querySelector("input[name=fuelLevel]");
     const cargoMass = document.querySelector("input[name=cargoMass]");
 
-    formSubmission(
+    if (formSubmission(
       document,
       list,
       pilot,
       copilot,
       fuelLevel,
       cargoMass
-    )
+    ) == 'Shuttle is Ready') {
       event.preventDefault();
+    } else {
+      event.preventDefault();
+    }
 
 
     

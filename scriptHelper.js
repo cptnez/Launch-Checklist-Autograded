@@ -55,7 +55,7 @@ function formSubmission(
   let statusCounter = 0;
   let pilotStatus = document.getElementById('pilotStatus')
   let copilotStatus = document.getElementById("copilotStatus");
-  const containerFaultyItems = document.getElementById('faultyItems');
+  let containerFaultyItems = document.getElementById('faultyItems');
   let containerLaunchStatus = document.getElementById('launchStatus');
   let fuelLevelStatus = document.getElementById("fuelStatus");
   let cargoMassStatus = document.getElementById("cargoStatus");
@@ -63,25 +63,25 @@ function formSubmission(
   //PILOT AND COPILOT STATEMENTs
   if (validateInput(pilot.value) !== 'Not a Number') {
     // alert('Please enter a valid input for Pilot Name')
-    // console.log("PILOT WRONG");
+    console.log("PILOT WRONG");
   } else {
-    pilotStatus.innerHTML = `Pilot ${pilot.value} is ready`;
+    pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
     statusCounter += 1;
   }
 
   if (validateInput(copilot.value) !== 'Not a Number') {
     // alert('Please enter a valid input for Co-Pilot Name')
-    // console.log("COPILOT WRONG");
+    console.log("COPILOT WRONG");
   } else {
-    copilotStatus.innerHTML = `Co-Pilot ${copilot.value} is ready`;
+    copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
     statusCounter += 1;
   }
 
   //FUEL LEVEL STATEMENT
-  if (validateInput(fuelLevel.value) !== 'Is a Number') {
+  if (validateInput(fuelLevel.value) !== 'Is a Number' || fuelLevel.value < 10000) {
     // alert('Please enter a valid input for Fuel Level');\
     // console.log("FUEL LEVEL WRONG");
-  } else if (fuelLevel.value < 10000) {
+  // } else if (fuelLevel.value < 10000) {
     containerFaultyItems.style.visibility = 'visible';
     fuelLevelStatus.innerHTML = "Fuel level too low for launch";
     containerLaunchStatus.innerHTML = "Shuttle Not Ready for Launch";
