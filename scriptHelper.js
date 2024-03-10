@@ -78,10 +78,11 @@ function formSubmission(
   }
 
   //FUEL LEVEL STATEMENT
-  if (validateInput(fuelLevel.value) !== 'Is a Number' || fuelLevel.value < 10000) {
-    // alert('Please enter a valid input for Fuel Level');\
-    // console.log("FUEL LEVEL WRONG");
-  // } else if (fuelLevel.value < 10000) {
+  // if (validateInput(fuelLevel.value) !== 'Is a Number') {
+  //   // alert('Please enter a valid input for Fuel Level');\
+  //   console.log("FUEL LEVEL WRONG")
+  // } else 
+  if (fuelLevel < 10000) {
     containerFaultyItems.style.visibility = 'visible';
     fuelLevelStatus.innerHTML = "Fuel level too low for launch";
     containerLaunchStatus.innerHTML = "Shuttle Not Ready for Launch";
@@ -93,10 +94,11 @@ function formSubmission(
   }
 
   //CARGO MASS STATEMENT
-  if (validateInput(cargoMass.value) !== 'Is a Number') {
-    // alert('Please enter a valid input for Cargo Mass')
-    // console.log("CARGO STATUS WRONG");
-  } else if (cargoMass.value > 10000) {
+  // if (validateInput(cargoMass.value) !== 'Is a Number') {
+  //   // alert('Please enter a valid input for Cargo Mass')
+  //   // console.log("CARGO STATUS WRONG");
+  // } else 
+  if (cargoMass > 10000) {
     containerFaultyItems.style.visibility = 'visible';
     cargoMassStatus.innerHTML = "Cargo mass too heavy for launch"
     containerLaunchStatus.innerHTML = "Shuttle Not Ready for Launch";
