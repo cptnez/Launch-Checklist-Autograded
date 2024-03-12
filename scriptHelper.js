@@ -131,16 +131,18 @@ else if (cargoMass > 10000) {
 async function myFetch() {
   let planetsReturned;
 
-  planetsReturned = await fetch().then(function (response) {});
-  console.log(JSON.stringify(planetsReturned, null, 2));
-  return planetsReturned;
+  planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then( function(response) {
+    // Access the JSON in the response
+    response.json().then( function(json) {
+    console.log(json);
+    });
+});
 }
 
 function pickPlanet(planets) {
-  let num = Math.random(planets)*10;
-  let planetSingular = Math.floor(num);
+  let planetsSelection = Math.floor((Math.random() * planets.length) + 1)
 
-  return planetSingular
+  return planets[planetsSelection];
   // random number
   //return random planets.randomnumber
 }
