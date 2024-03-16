@@ -47,13 +47,13 @@ window.addEventListener("load", function () {
       console.log(planet);
       let missionTarget = document.getElementById("missionTarget").innerHTML;
       addDestinationInfo(
-        missionTarget,
+        document,
         planet.name,
         planet.diameter,
         planet.star,
         planet.distance,
         planet.moons,
-        planet.imageUrl
+        planet.image
       );
     });
 });

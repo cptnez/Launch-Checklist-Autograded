@@ -10,7 +10,7 @@ function addDestinationInfo(
   star,
   distance,
   moons,
-  imageUrl
+  image
 ) {
   // Here is the HTML formatting for our mission target div.
   let missionTarget = document.getElementById("missionTarget");
@@ -25,7 +25,7 @@ missionTarget.innerHTML =
                      <li>Distance from Earth: ${distance}</li>
                      <li>Number of Moons: ${moons}</li>
                  </ol>
-                 <img src="${imageUrl}">`;
+                 <img src="${image}">`;
 }
 
 function validateInput(testInput) {
