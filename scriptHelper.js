@@ -146,9 +146,7 @@ async function myFetch() {
     'https://handlers.education.launchcode.org/static/planets.json'
   ).then(function (response) {
    return response.json()
-    // .then(function (json) {
-    //   console.log(JSON.stringify(json, null, 2));
-    // });
+
   });
   return planetsReturned;
 }
