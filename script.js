@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
   // Set listedPlanetsResponse equal to the value returned by calling myFetch()
   let listedPlanetsResponse = myFetch();
 
-  console.log("list of plants");
+
   console.log(listedPlanetsResponse);
 
   listedPlanetsResponse
@@ -45,7 +45,6 @@ window.addEventListener("load", function () {
       // planet = pickPlanet(listedPlanets);
       let planet = pickPlanet(listedPlanets);
       console.log(planet);
-      let missionTarget = document.getElementById("missionTarget").innerHTML;
       addDestinationInfo(
         document,
         planet.name,

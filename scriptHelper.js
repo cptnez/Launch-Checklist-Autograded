@@ -1,4 +1,3 @@
-
 // Write your helper functions here!
 
 require("cross-fetch/polyfill");
@@ -15,8 +14,7 @@ function addDestinationInfo(
   // Here is the HTML formatting for our mission target div.
   let missionTarget = document.getElementById("missionTarget");
 
-missionTarget.innerHTML =
-   `
+  missionTarget.innerHTML = `
                  <h2>Mission Destination</h2>
                  <ol>
                      <li>Name: ${name}</li>
@@ -55,7 +53,12 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoMass) {
   let inputCounter = 0;
 
   // VALIDATION OF STRINGS
-  if (pilot === "" || copilot === "" || fuelLevel === "" || cargoMass === "") {
+  if (
+    validateInput(pilot) === "Empty" ||
+    validateInput(copilot) === "Empty" ||
+    validateInput(fuelLevel) === "Empty" ||
+    validateInput(cargoMass) === "Empty"
+  ) {
     alert("All fields are required!");
   } else {
     inputCounter = true;
@@ -143,15 +146,12 @@ async function myFetch() {
   let planetsReturned;
 
   planetsReturned = await fetch(
-    'https://handlers.education.launchcode.org/static/planets.json'
+    "https://handlers.education.launchcode.org/static/planets.json"
   ).then(function (response) {
-   return response.json()
-
+    return response.json();
   });
   return planetsReturned;
 }
-
-
 
 function pickPlanet(planets) {
   let planetsSelection = Math.floor(Math.random() * planets.length);
